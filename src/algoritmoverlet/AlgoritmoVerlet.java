@@ -31,7 +31,7 @@ public class AlgoritmoVerlet {
         //  a4.potencial(a3.calcDist(atm));
         //  a5.etotal(a4.potencial(a3.calcDist(atm)), atm);
         ArrayList<MatrizAcc> accAtual = a6.acc2(a3.calcDist3(atm), atm);
-        for (int i = 0; i <= 1000; i++) {
+        for (int i = 1; i <= 1000; i++) {
             System.out.println("Passo numero: " + i);
             atm = a7.r(vel, accAtual, atm);
             ArrayList<MatrizAcc> accProx = a6.acc2(a3.calcDist3(atm), atm);
