@@ -17,6 +17,7 @@ public class AlgoritmoVerlet {
     static Verlet a7 = new Verlet();
 
     public static void main(String[] args) {
+        double Eatual = 0, Eanterior =0;
         ArrayList<Velocidade> vel = new ArrayList<>();
         List<atomo> atm = a2.Catomos(a1.Natomos());
 
@@ -27,15 +28,17 @@ public class AlgoritmoVerlet {
             aux.vel[2] = 0.3;
             vel.add(aux);
         }
-
-        //  a4.potencial(a3.calcDist(atm));
-        //  a5.etotal(a4.potencial(a3.calcDist(atm)), atm);
+        
+        
         ArrayList<MatrizAcc> accAtual = a6.acc2(a3.calcDist3(atm), atm);
         for (int i = 1; i <= 1000; i++) {
             System.out.println("Passo numero: " + i);
             atm = a7.r(vel, accAtual, atm);
             ArrayList<MatrizAcc> accProx = a6.acc2(a3.calcDist3(atm), atm);
             vel = a7.v(vel, accAtual, accProx);
+            
+            double etotal = a5.somaT(atm, vel)+a4.potencial(a3.calcDist(atm));
+            System.out.println("Energia total no sistema: "+etotal);
             accAtual = accProx;
         }
 

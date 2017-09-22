@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class PontencialLennardJones {
 
-    public void calc() {
+    public void calcLJ() {
         //Potecial de Lennar-Jones
         double sigma = 0.3345, epsilon = 0.0661;
         System.out.println("Selecione a distancia inter-atomica:");

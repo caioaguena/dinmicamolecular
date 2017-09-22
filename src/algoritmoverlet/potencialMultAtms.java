@@ -17,7 +17,7 @@ public class potencialMultAtms {
             }
             k++;
         }
-        System.out.println("Energia potencial total: " + somaep);
+       // System.out.println("Energia potencial total: " + somaep);
         return somaep;
     }
 

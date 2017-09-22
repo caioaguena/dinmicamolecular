@@ -20,7 +20,7 @@ public class MatrixDistancia {
             }
             distancia.add(distancia2);
         }
-        System.out.println(distancia);
+       // System.out.println(distancia);
         return distancia;
     }
 
@@ -59,19 +59,23 @@ public class MatrixDistancia {
             ArrayList<distanciaAtomos> distanciaTemp = new ArrayList<>();
             for (atomo at2 : atm) {
                 distanciaAtomos dist = new distanciaAtomos();
+                distanciaAtomos dist2 = new distanciaAtomos();
                 dist.posicao[0] = at2.posicao[0] - at1.posicao[0];
-                if (dist.posicao[0] != 0) {
-                    dist.posicao[0] = (4721523 * Math.abs(dist.posicao[0])) / ((2500000 * (Math.pow(sigma, 2))) * Math.sqrt(Math.pow(Math.abs(dist.posicao[0]), 2) + Math.pow(Math.abs(dist.posicao[1]), 2) + Math.pow(Math.abs(dist.posicao[2]), 2)));
-                }
                 dist.posicao[1] = at2.posicao[1] - at1.posicao[1];
+                dist.posicao[2] = at2.posicao[2] - at1.posicao[2];
+                if (dist.posicao[0] != 0) {
+                    dist2.posicao[0] = (4721523 * Math.abs(dist.posicao[0])) / ((2500000 * (Math.pow(sigma, 2))) * Math.sqrt(Math.pow(Math.abs(dist.posicao[0]), 2) + Math.pow(Math.abs(dist.posicao[1]), 2) + Math.pow(Math.abs(dist.posicao[2]), 2)));
+                }
+                
                 if (dist.posicao[1] != 0) {
-                    dist.posicao[1] = (4721523 * Math.abs(dist.posicao[1])) / ((2500000 * (Math.pow(sigma, 2))) * Math.sqrt(Math.pow(Math.abs(dist.posicao[0]), 2) + Math.pow(Math.abs(dist.posicao[1]), 2) + Math.pow(Math.abs(dist.posicao[2]), 2)));
+                    dist2.posicao[1] = (4721523 * Math.abs(dist.posicao[1])) / ((2500000 * (Math.pow(sigma, 2))) * Math.sqrt(Math.pow(Math.abs(dist.posicao[0]), 2) + Math.pow(Math.abs(dist.posicao[1]), 2) + Math.pow(Math.abs(dist.posicao[2]), 2)));
                 }
                 dist.posicao[2] = at2.posicao[2] - at1.posicao[2];
                 if (dist.posicao[2] != 0) {
-                    dist.posicao[2] = (4721523 * Math.abs(dist.posicao[2])) / ((2500000 * (Math.pow(sigma, 2))) * Math.sqrt(Math.pow(Math.abs(dist.posicao[0]), 2) + Math.pow(Math.abs(dist.posicao[1]), 2) + Math.pow(Math.abs(dist.posicao[2]), 2)));
+                    dist2.posicao[2] = (4721523 * Math.abs(dist.posicao[2])) / ((2500000 * (Math.pow(sigma, 2))) * Math.sqrt(Math.pow(Math.abs(dist.posicao[0]), 2) + Math.pow(Math.abs(dist.posicao[1]), 2) + Math.pow(Math.abs(dist.posicao[2]), 2)));
                 }
-                distanciaTemp.add(dist);
+                
+                distanciaTemp.add(dist2);
             }
             distanciaXYZ.add(distanciaTemp);
         }
