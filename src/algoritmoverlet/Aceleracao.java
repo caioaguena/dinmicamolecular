@@ -50,13 +50,13 @@ public class Aceleracao {
                     if (datm.posicao[i] != 0) {
                         switch (i) {
                             case 0:
-                                x = x + (datm.posicao[i] / atm.get(cont).massa);
+                                x = x + (-datm.posicao[i] / atm.get(cont).massa);
                                 break;
                             case 1:
-                                y = y + (datm.posicao[i] / atm.get(cont).massa);
+                                y = y + (-datm.posicao[i] / atm.get(cont).massa);
                                 break;
                             case 2:
-                                z = z + (datm.posicao[i] / atm.get(cont).massa);
+                                z = z + (-datm.posicao[i] / atm.get(cont).massa);
                                 break;
                         }
                     }
