@@ -7,7 +7,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AlgoritmoVerlet {
-
+    //v3
+    
     static qtdAtomos a1 = new qtdAtomos();
     static criacaoAtomos a2 = new criacaoAtomos();
     static MatrixDistancia a3 = new MatrixDistancia();
